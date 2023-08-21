@@ -28,3 +28,18 @@ source(paste(SPATH, '/Code/table5.6.R', sep=''))
 
 # Re-produce Table 7 
 source(paste(SPATH, '/Code/table7.R', sep=''))
+
+# Re-produce faithful_code.Rdata
+source(paste(SPATH, '/Code/faithful_code.R', sep=''))
+
+# Re-produce faithful_code_01.Rdata
+source(paste(SPATH, '/Code/faithful_code_01.R', sep=''))
+
+# Re-produce vdeq_code.Rdata
+source(paste(SPATH, '/Code/vdeq_code.R', sep=''))
+
+# Re-produce hawks_code.Rdata
+source(paste(SPATH, '/Code/hawks_code.R', sep=''))
+
+# Re-produce sim_VVE_code.R
+source(paste(SPATH, '/Code/sim_VVE_code.R', sep=''))

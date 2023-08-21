@@ -1,4 +1,3 @@
-rm(list = ls())
 library(mvtnorm)
 library(tmvtnorm)
 library(mclust)
