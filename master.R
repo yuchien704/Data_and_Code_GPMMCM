@@ -20,7 +20,7 @@ source(paste(SPATH, '/Code/fig7.R', sep=''))
 source(paste(SPATH, '/Code/fig8.R', sep=''))
 
 
-# Re-produce Table 2,Table 3, Table 4
+# Re-produce Table 2, Table 3, Table 4
 source(paste(SPATH, '/Code/table2.3.4.R', sep=''))
 
 # Re-produce Table 5,  Table 6
@@ -29,17 +29,17 @@ source(paste(SPATH, '/Code/table5.6.R', sep=''))
 # Re-produce Table 7 
 source(paste(SPATH, '/Code/table7.R', sep=''))
 
-# Re-produce faithful_code.Rdata
+# Re-produce faithful_code.RData
 source(paste(SPATH, '/Code/faithful_code.R', sep=''))
 
-# Re-produce faithful_code_01.Rdata
+# Re-produce faithful_code_01.RData
 source(paste(SPATH, '/Code/faithful_code_01.R', sep=''))
 
-# Re-produce vdeq_code.Rdata
+# Re-produce vdeq_code.RData
 source(paste(SPATH, '/Code/vdeq_code.R', sep=''))
 
-# Re-produce hawks_code.Rdata
+# Re-produce hawks_code.RData
 source(paste(SPATH, '/Code/hawks_code.R', sep=''))
 
-# Re-produce sim_VVE_code.R
+# Re-produce sim_VVE_code.RData
 source(paste(SPATH, '/Code/sim_VVE_code.R', sep=''))
