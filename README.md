@@ -1,6 +1,6 @@
 # GPMMCM
 
-## Supplementary Material for "Gaussian parsimonious mixture models with censored and missing values" by Wan-Lun Wang, Victor H. Lachos, Yu-Chien Chen, and Tsung-I Lin
+## Supplementary Material for "Flexible clustering via Gaussian parsimonious mixture models with censored and missing values" by Wan-Lun Wang, Victor H. Lachos, Yu-Chien Chen, and Tsung-I Lin
 
 ### Author responsible for the code
 For questions, comments or remarks about the code please contact responsible author, Tsung-I Lin (tilin@nchu.edu.tw).
@@ -104,38 +104,30 @@ Therefore, we need other functions to implement the procedure.
        (1) 'fig1.R' main script for reproducing drawing Figure 1 that shows 14 GPMMs with three groups in two dimensions;
        (2) 'fig2.R' main script for reproducing Figure 2; 
        (3) 'fig3.4.R' main script for reproducing Figure 3 and Figure 4;
-       (4) 'fig5.6.R' main script for reproducing Figure 5 and Figure 6;
-       (5) 'fig7.R' main script for reproducing Figure 7; 
-       (6) 'fig8.R' main script for reproducing Figure 8;
-       (7) 'table2.3.4.R' main script for reproducing Tables 2, 3, and 4;
-       (8) 'table5.6.R' main script for Tables 5 and 6; 
-       (9) 'table7.R' main script for Table 7;
+       (4) 'fig5.R' main script for reproducing Figure 5;
+       (5) 'fig6.R' main script for reproducing Figure 6; 
+       (6) 'table2.3.R' main script for reproducing Tables 2 and 3;
+       (7) 'table4.R' main script for Tables 4; 
 
 ###### Note for Section 5 - Illustrative examples - faithful data:
 Because the 'faithful_code.R' and 'faithful_code_01.R' code takes a huge amount of time to run the ECM procedure for fitting the GPMM-CM model, we record these intermediate results in 'faithful.RData' and 'faithful_01.RData' so that one can use the R codes 'fig2.R' and 'fig3.4.R' to obtain the final results immediately.
 To reproduce the results presented in Figure 2, just load 'faithful_01.RData' file in the './Data/' and then run the script 'fig2.R' in the subfolder './Code/';  
 To reproduce the results presented in Figures 3 and 4, just load 'faithful.RData' file in the './Data/' and then run the script 'fig3.4.R' in the subfolder './Code/'
 
-       (10) 'faithful_code.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 1-5 to the faithful data including both interval-censored values and missing values;
-       (11) 'faithful_code_01.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 1-5 to the faithful data;
-
-###### Note for Section 5 - Illustrative examples - vdeq data:
-Because the 'vdeq_code.R' code takes a huge amount of time to run the ECM procedure for fitting the GPMM-CM model, we record these intermediate results in 'vdeq.RData' so that one can use the R codes 'fig5.6.R', and 'table2.3.4.R' to obtain the final results immediately.
-To reproduce the results presented in Figures 5 and 6, and Tables 2, 3, and 4, just load 'vdeq.RData' file in the './Data/' and then run the script 'fig5.6.R', and 'table2.3.4.R' in the subfolder './Code/';  
-
-       (12) 'vdeq_code.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 1 to 5 to the standardized vdeq data including both left-censored values;
+       (8) 'faithful_code.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 1-5 to the faithful data including both interval-censored values and missing values;
+       (9) 'faithful_code_01.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 1-5 to the faithful data;
 
 ###### Note for Section 5 - Illustrative examples - hawks data:
-Because the 'hawks_code.R' code takes a huge amount of time to run the ECM procedure for fitting the GPMM-CM model, we record these intermediate results in 'hawks.RData' so that one can use the R codes 'fig7.R', and 'table5.6.R' to obtain the final results immediately.
-To reproduce the results presented in Figures 7 and Tables 5 and 6, just load 'hawks.RData' file in the './Data/' and then run the script 'fig7.R', and 'table5.6.R' in the subfolder './Code/';  
+Because the 'hawks_code.R' code takes a huge amount of time to run the ECM procedure for fitting the GPMM-CM model, we record these intermediate results in 'hawks.RData' so that one can use the R codes 'fig5.R', and 'table2.3.R' to obtain the final results immediately.
+To reproduce the results presented in Figures 5 and Tables 2 and 3, just load 'hawks.RData' file in the './Data/' and then run the script 'fig5.R', and 'table2.3.R' in the subfolder './Code/';  
 
-       (13) 'hawks_code.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 3 to the standardized hawks data including both interval-censored values and missing values;
+       (10) 'hawks_code.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 3 to the standardized hawks data including both interval-censored values and missing values;
 
 ###### Note for Section 5 - Illustrative examples - simulated data:
 Because the 'sim_VVE_code_code.R' code takes a huge amount of time to run the ECM procedure for fitting the GPMM-CM model, we record every 20 replications result in 'CM_1.RData', 'CM_2.RData', 'CM_3.RData', 'CM_4.RData', and 'CM_5.RData' respectively so that one can use the R codes 'table7.R' to obtain the final results immediately.
-To reproduce the results presented in Table 7, just load 'CM_1.RData', 'CM_2.RData', 'CM_3.RData', 'CM_4.RData', and 'CM_5.RData' files in the './Data/' and then run the script 'table7.R'in the subfolder './Code/';  
+To reproduce the results presented in Table 4, just load 'CM_1.RData', 'CM_2.RData', 'CM_3.RData', 'CM_4.RData', and 'CM_5.RData' files in the './Data/' and then run the script 'table4.R'in the subfolder './Code/';  
 
-       (14) 'sim_VVE_code.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 1 to 5 to simulated datasets including both interval-censored values and missing values.
+       (11) 'sim_VVE_code.R' main script for fitting the GPMM-CM models with 14 parsimonious structures and g = 1 to 5 to simulated datasets including both interval-censored values and missing values.
 
 #### Subfolder: ./Data ####
 './Data/'
@@ -145,18 +137,13 @@ To reproduce the results presented in Table 7, just load 'CM_1.RData', 'CM_2.RDa
        (2) 'faithful.RData' collecting the fitting results of the 14 GPMM-CM models to the old faithful data with interval-censored and missing values, where g ranging from 1 to 5;
        (3) 'faithful_01.RData' collecting the fitting results of the 14 GPMM-CM models to the old faithful data, where g ranging from 1 to 5;
        (4) 'hawks.RData' collecting the fitting and classification results of the 3-component GPMM-CM with 14 parsimonious structures to the hawks data with missing values and synthetic censored values; 
-       (5) 'vdeq_01.RData' collecting the censored proportions, sample means, and sample deviations for the original VDEQ data; and
-       (6) 'VDEQ_02.RData' collecting the fitting results of the 14 GPMM-CM models to the standardized (scaled) VDEQ data including censored values, where g varies from 1 to 5.
- 
-       (7) The subfolder 'source', which contains the hawks dataset and the vdeq dataset used in Section 5.
+       (5) The subfolder 'source', which contains the hawks dataset used in Section 5.
 
 './Data/source'
 	subfolder contains
 	
     	(1) 'Hawks.csv' for the hawks dataset usued in Section 5.3; 
-    	(2) 'moesm.txt' for the vdeq dataset used in Section 5.2; and 
-    	(3) 'moesm.cen.txt' for vdeq dataset indicated the detection limits of each variable in the 'moesm.txt' dataset.
-
+    
 #### Subfolder: ./Results ####
 './Results/'
        contains 
@@ -165,16 +152,12 @@ To reproduce the results presented in Table 7, just load 'CM_1.RData', 'CM_2.RDa
        (2) 'fig2.eps'; perspective plot and bivariate density contours obtained from the best-fitted (EEE, 3) model; 
        (3) 'fig3.eps': comparison of BIC values for 14 GPMM-CMs with g = 1 − 5 fitted to the old faithful data involving censored and missing values;
        (4) 'fig4.eps': the histograms and scatter plot overlaid with contour curves obtained from the best fitted (EVI, 3) model for the old faithful data involving censored and missing values;
-       (5) 'fig5.eps': comparison of BIC values for the 14 GPMM-CMs with g = 1 − 5 fitted to the VDEQ data; 
-       (6) 'fig6.eps': the histogram of original concentration levels of each trace metal, recovered samples with the censored responses predicted by fitting (VVV, 3), and recovered samples with the censored responses predicted by fitting (VVE, 3);
-       (7) 'fig7.eps': the BIC curve for 14 GPMM-CMs with g = 3 fitted to the hawks data; 
-       (8) 'fig8.eps': the scatter-histogram plot of one simulated case with 450 random samples containing missing and censored values whose true values of parameters are specified in Section 5.4;
-       (9) 'Table2.csv': a brief summary of VDEQ data; 
-       (10) 'Table3.csv': a table of MAP classification between (VVE, 4) versus (VVE, 3) and (VEV, 3) models;
-       (11) 'Table4.csv': comparing the ML estimates of parameters from fitting (VVV, 3), (VVE, 3) and (VEV, 3) model;
-       (12) 'Table5.csv': an overview of 5 variables of the hawks data with three species;
-       (11) 'Table6.csv': the results of the ARI and CCR of the 14 clustering models with fitting the hawks data into three clusters; and
-       (12) 'Table7.csv': performance comparisons obtained from fitting GPMM-CM models with 14 parsimonious structures to the simulated dataset over 100 replications.
+       (5) 'fig5.eps': the BIC curve for 14 GPMM-CMs with g = 3 fitted to the hawks data; 
+       (6) 'fig6.eps': the scatter-histogram plot of one simulated case with 450 random samples containing missing and censored values whose true values of parameters are specified in Section 5.3;
+
+       (7) 'Table2.csv': an overview of 5 variables of the hawks data with three species;
+       (8) 'Table3.csv': the results of the ARI and CCR of the 14 clustering models with fitting the hawks data into three clusters; and
+       (9) 'Table4.csv': performance comparisons obtained from fitting GPMM-CM models with 14 parsimonious structures to the simulated dataset over 100 replications.
 
 # Additional Remark 
 One can directly run each "source(.)" described in 'master.r' file in the seperate R session to obtain the results.
