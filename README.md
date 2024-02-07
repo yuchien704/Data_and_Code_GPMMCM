@@ -142,7 +142,7 @@ To reproduce the results presented in Table 4, just load 'CM_1.RData', 'CM_2.RDa
 './Data/source'
 	subfolder contains
 	
-    	(1) 'Hawks.csv' for the hawks dataset usued in Section 5.3; 
+    	(1) 'Hawks.csv' for the hawks dataset usued in Section 5.2; 
     
 #### Subfolder: ./Results ####
 './Results/'
