@@ -9,8 +9,10 @@ BIC[3,11] = BIC[3,11]-10
 BIC[2,1] = BIC[2,1]-5
 
 #fig3
-postscript(paste(SPATH, '/Results/fig3.eps', sep=''), width=6, height=30)
-par(mar=c(4,4,2,0.5), oma = c(0, 0, 4, 0),pty='s')
+postscript(paste(SPATH, '/Results/fig3.eps', sep=''), width=8, height=8)
+mat <- matrix(1:2, 1, 2)
+nf = layout(mat, widths=c(6,3), heights=2)
+par(mar=c(4,4,2,0), oma = c(0,1,4,1),pty='s')
 Col=c("Dark Orchid4","Purple","Orange","Dark Red","Red","Magenta","Cyan","Dark Green","Royal Blue","Dark Goldenrod","Blue","Violet Red","Dark Violet","Green")
 Pch=c(1:14)
 plot(NA, xlim=c(0.5,5),ylim=c(min(BIC[!is.na(BIC)]), max(BIC[!is.na(BIC)])),
@@ -34,6 +36,9 @@ axis(2, at=c(2240,2200,2160), labels=c(2990,2950,2910), pos = 0.5)
 text(3+0.3,BIC[3,12]-5, "1st.  EVI,3",cex = 0.7, col = Col[12])
 text(3-0.3,BIC[3,11]-5, "2nd. \n VVI,3",cex = 0.7, col = Col[11])
 text(2-0.2,BIC[2,1]-5, "3rd. \n VVV,2",cex = 0.7, col = Col[1])
+plot.new()
+legend("left", legend = c("1st. EVI,3","2nd. VVI,3","3rd. VVV,2"), cex = 1.1, pch = c(12,11,1), col = c(Col[12],Col[11],Col[1]), text.col = c(Col[12],Col[11],Col[1]))
+
 dev.off()
 
 

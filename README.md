@@ -79,7 +79,7 @@ R codes for the implementation of our methodology are provided.
     	(13) 'VII_GMIXCMB.R' that can perform the ECM algorithm for fitting the GPMM-CM with VII structure; 
     	(14) 'EII_GMIXCMB.R' that can perform the ECM algorithm for fitting the GPMM-CM with EII structure; 
  
-   	(15) 'EVE_GMIXCMB_MM.R' that can perform the MM algorithm for fitting the GPMM-CM with EVE structure; 
+   	  (15) 'EVE_GMIXCMB_MM.R' that can perform the MM algorithm for fitting the GPMM-CM with EVE structure; 
     	(16) 'VVE_GMIXCMB_MM.R' that can perform the MM algorithm for fitting the GPMM-CM with EVE structure;
     	
 ###### Note for 14 structures function ######

@@ -17,11 +17,11 @@ for(i in 1:5){
     Y[g[[j]][na.posi],i] = mean[i,j] 
   }
 }
-Table5 = cbind(round(mean,3)[,1], round(sd,3)[,1], num.na[,1], 
+Table2 = cbind(round(mean,3)[,1], round(sd,3)[,1], num.na[,1], 
               round(mean,3)[,2], round(sd,3)[,2], num.na[,2],
               round(mean,3)[,3], round(sd,3)[,3], num.na[,3])
-colnames(Table5) = c("CH_mean", "CH_sd", "CH_num.na","RT_mean", "RT_sd", "RT_num.na", "SS_mean", "SS_sd", "SS_num.na")
-write.csv(Table5, paste(SPATH,'/Results/Table5.csv',sep=""), row.names = TRUE)
+colnames(Table2) = c("CH_mean", "CH_sd", "CH_num.na","RT_mean", "RT_sd", "RT_num.na", "SS_mean", "SS_sd", "SS_num.na")
+write.csv(Table2, paste(SPATH,'/Results/Table2.csv',sep=""), row.names = TRUE)
 
 a3 = round(a3)
 n = nrow(Ycm)
@@ -48,6 +48,6 @@ for(i in 1:14){
 }
 names(ari_hawks) = names(CCR_hawks) = c("VVV", "EEE", "EEV","EVE","EVV","VEE","VEV","VVE","VEI","EEI","VVI","EVI","VII","EII")
 
-Table6 = rbind(round(ari_hawks,4),round(CCR_hawks,4))
-rownames(Table6) = c("ARI", "CCR")
-write.csv(Table6, paste(SPATH,'/Results/Table6.csv',sep=""), row.names = TRUE)
+Table3 = rbind(round(ari_hawks,4),round(CCR_hawks,4))
+rownames(Table3) = c("ARI", "CCR")
+write.csv(Table3, paste(SPATH,'/Results/Table3.csv',sep=""), row.names = TRUE)

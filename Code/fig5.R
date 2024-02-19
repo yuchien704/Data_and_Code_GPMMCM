@@ -5,13 +5,13 @@ library(MomTrunc)
 load(paste(SPATH, "/Data/hawks.RData", sep = ""))
 
 a3 = round(a3)
-#======================fig7==================================#
-
 a3[(13:14)] = a3[(13:14)]-12000
 a3[7] = a3[7]-100
 
-postscript(paste(SPATH, '/Results/fig7.eps', sep=''), width=6, height=30)
-par(mar=c(4,4,2,0.5), oma = c(0, 0, 4, 0),pty='s')
+postscript(paste(SPATH, '/Results/fig5.eps', sep=''), width=8, height=8)
+mat <- matrix(1:2, 1, 2)
+nf = layout(mat, widths=c(6,3), heights=2)
+par(mar=c(4,4,2,0), oma = c(0,0,4,1),pty='s')
 plot(a3, type = 'b',lwd = 2,axes=FALSE, xlab = "structure", ylab = "BIC values")
 points(7, a3[7], col = 2, pch = 15,cex = 1.5)
 points(1, a3[1], col = 3, pch = 16,cex = 1.5)
@@ -28,4 +28,6 @@ lines(c(0.6,0.9), c(36800, 36833), type = "l")
 lines(c(0.9,0.4), c(36833, 36866), type = "l")
 lines(c(0.4,0.6), c(36866, 36900), type = "l")
 axis(2, at=c(38500,37500), labels=c(50000,49000), pos = 0.6)
+plot.new()
+legend("left", legend = c("1st. VEV,3","2nd. VVV,3","3rd. VVE,3"), cex = 1.1, text.col = c(2,3,4),pch = c(15,16,17),col=c(2,3,4))
 dev.off()

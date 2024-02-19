@@ -43,7 +43,7 @@ cen_2 = Ycm[which(cen[,2]==2),2][1]
 na.posi = which(rowSums(is.na(Ycm))==1)
 clus = rep(c(1,2,3), each = 150)
 
-postscript(paste(SPATH, '/Results/fig8.eps', sep=''), width=6, height=30)
+postscript(paste(SPATH, '/Results/fig6.eps', sep=''), width=6, height=30)
 mat <- matrix(c(2, 4, 1, 3), 2, 2,byrow=TRUE)
 nf <- layout(mat, widths=c(4,2), heights=c(2,4), respect = TRUE)
 
@@ -64,7 +64,6 @@ barplot(t3[2,a3], ylim=c(0,max(t3)),col=3, border="lightgreen",  xaxt='n', las=1
 barplot(t3[3,a3], ylim=c(0,max(t3)),col=0, border="blue",xaxt='n', las=1, space=0, add=T, xaxt='n', yaxt='n')
 
 par(mar=c(4, 0, 4, 1))
-
 y1 = list(y11 = Ycm[clus==1, 2], y12 = Ycm[clus==2, 2], y13 = Ycm[clus==3, 2])
 h3y = lapply(y1, hist, breaks = seq(min(Ycm[,2], na.rm = T), max(Ycm[,2], na.rm = T), length=30), plot=F)
 t3y = rbind(h3y[[1]]$counts, h3y[[2]]$counts, h3y[[3]]$counts)
