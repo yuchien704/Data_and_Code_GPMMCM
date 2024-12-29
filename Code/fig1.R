@@ -4,7 +4,7 @@ library(mclust)
 library(MomTrunc)
 library(mixtools)
 library("RColorBrewer")
-source(paste(SPATH, "/Function/gen_cen_na.R", sep = ""))
+source(paste(SPATH, "/Function/gen_cen_na_new.R", sep = ""))
 
 vech.posi=function(dim) cbind(rep(1:dim, 1:dim), unlist(mapply(':', 1, 1:dim)))
 

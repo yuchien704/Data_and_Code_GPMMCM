@@ -4,22 +4,22 @@ library(mclust)
 library(MomTrunc)
 library(mixtools)
 
-source(paste(SPATH, '/Function/gen_cen_na.r', sep=''))
+source(paste(SPATH, '/Function/gen_cen_na_new.r', sep=''))
 source(paste(SPATH, '/Function/F-G.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/EEE_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/EEI_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/EEV_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/EII_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/EVI_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/EVV_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/VEE_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/VEI_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/VEV_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/VII_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/VVI_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/VVV_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/EVE_GMIXCMB.R', sep=''))
-source(paste(SPATH, '/Function/Both_gmixcm/VVE_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/EEE_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/EEI_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/EEV_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/EII_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/EVI_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/EVV_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/VEE_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/VEI_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/VEV_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/VII_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/VVI_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/VVV_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/EVE_GMIXCMB.R', sep=''))
+source(paste(SPATH, '/Function/fn/VVE_GMIXCMB.R', sep=''))
 
 #choose best model function
 B_model = function(Y,Ycm,cen,k,tol = 1e-5,neq.S = T,max.iter=500,tol.FG=1e-3,max.iter.FG=10, per=1)
@@ -29,22 +29,22 @@ B_model = function(Y,Ycm,cen,k,tol = 1e-5,neq.S = T,max.iter=500,tol.FG=1e-3,max
   for(g in 1:k){
     clus=kmeans(Y,g)$cluster
     
-    fit_VVV = VVV.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
-    fit_EEE = EEE.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = F, max.iter, per)
-    fit_EEV = EEV.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
-    fit_EVE = EVE.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, tol.FG, max.iter.FG, per)
-    fit_EVV = EVV.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
-    fit_VEE = VEE.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
-    fit_VEV = VEV.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
-    fit_VVE = VVE.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, tol.FG, max.iter.FG, per)
+    fit_VVV = VVV.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_EEE = EEE.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_EEV = EEV.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_EVE = EVE.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, tol.FG, max.iter.FG, per)
+    fit_EVV = EVV.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_VEE = VEE.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_VEV = VEV.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_VVE = VVE.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, tol.FG, max.iter.FG, per)
     
-    fit_VEI = VEI.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
-    fit_EEI = EEI.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = F, max.iter, per)
-    fit_VVI = VVI.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
-    fit_EVI = EVI.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
+    fit_VEI = VEI.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_EEI = EEI.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_VVI = VVI.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_EVI = EVI.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
     
-    fit_VII = VII.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = T, max.iter, per)
-    fit_EII = EII.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol, neq.S = F, max.iter, per)
+    fit_VII = VII.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
+    fit_EII = EII.GMIXCMB.ECM.new(Ycm, Y.knn=Y, cen, g, true.clus=clus, tol = 1e-5, neq.S = T, max.iter, per)
     a=(c(fit_VVV$model.inf[[5]],fit_EEE$model.inf[[5]],fit_EEV$model.inf[[5]],fit_EVE$model.inf[[5]],
           fit_EVV$model.inf[[5]],fit_VEE$model.inf[[5]],fit_VEV$model.inf[[5]],fit_VVE$model.inf[[5]],
           fit_VEI$model.inf[[5]],fit_EEI$model.inf[[5]],fit_VVI$model.inf[[5]],fit_EVI$model.inf[[5]],
@@ -67,7 +67,7 @@ Ycm = NC$Data
 cen = NC$cen
 
 
-Best5_B = B_model(Y,Ycm,cen,k=5,tol = 1e-5,neq.S = T,max.iter=1000,tol.FG=1e-3,max.iter.FG=10, per=1)
+Best5_B = B_model(Y,Ycm,cen,k=5,tol = 1e-5,neq.S = T,max.iter=1000,tol.FG=1e-3,max.iter.FG=10, per=100)
 BIC = Best5_B$BIC
 #================================ plot faithful=====================================#
 
@@ -87,7 +87,7 @@ na.posi = which(rowSums(is.na(cen))==1)
 #contour
 set.seed(0307)
 g=3;clus=kmeans(Y,g)$cluster
-fit1 = EVI.GMIX.MVNCM.B.ECM(Ycm, cen, g, clus, tol = 1e-5, neq.S = T, max.iter=1000, per=1)
+fit1 = EVI.GMIXCMB.ECM.new(Ycm, cen, g, clus, tol = 1e-5, neq.S = T, max.iter=1000, per=1)
 m=30
 tmp1=range(na.omit(Ycm[,1]))
 tmp2=range(na.omit(Ycm[,2]))
