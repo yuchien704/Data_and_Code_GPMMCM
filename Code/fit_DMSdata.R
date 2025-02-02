@@ -98,12 +98,13 @@ end_time_msnc <- Sys.time()
 # cat('FM-MSNC running time=', end_time_msnc - start_time_msnc, 'CCR=', fit.msnc.CCR, 'ARI=', fit.msnc.ARI, '\n')
 
 
-idx=c(10,3,5,9,1)
+idx=c(10,3,5,8,9,1)
 Table4=round(rbind(fit_VVV$model.inf[idx], fit_EEE$model.inf[idx], fit_EEV$model.inf[idx], fit_EVE$model.inf[idx],
                    fit_EVV$model.inf[idx], fit_VEE$model.inf[idx], fit_VEV$model.inf[idx], fit_VVE$model.inf[idx],
                    fit_VEI$model.inf[idx], fit_EEI$model.inf[idx], fit_VVI$model.inf[idx], fit_EVI$model.inf[idx],
-                   fit_VII$model.inf[idx], fit_EII$model.inf[idx], c(fit_VVV$model.inf[10], fit.mnc$res$loglik, fit.mnc$res$bic, fit.mnc.CCR, fit.mnc$res$time[[1]]),
-                   c(fit_VVV$model.inf[10]+10, fit.msnc$res$loglik, fit.msnc$res$bic, fit.msnc.CCR, fit.msnc$res$time[[1]])),3)
+                   fit_VII$model.inf[idx], fit_EII$model.inf[idx], 
+                   c(fit_VVV$model.inf[10], fit.mnc$res$loglik, fit.mnc$res$bic, fit.mnc.ARI, fit.mnc.CCR, fit.mnc$res$time[[1]]),
+                   c(fit_VVV$model.inf[10]+10, fit.msnc$res$loglik, fit.msnc$res$bic, fit.msnc.ARI, fit.msnc.CCR, fit.msnc$res$time[[1]])),3)
 rownames(Table4) = c("VVV","EEE","EEV","EVE","EVV","VEE","VEV","VVE","VEI","EEI","VVI","EVI","VII","EII",'FM-MNC','FM-MSNC')
 Table4
 

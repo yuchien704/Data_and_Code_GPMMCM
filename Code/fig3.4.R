@@ -54,6 +54,9 @@ for(i in 1:g) den=den+mvtnorm::dmvnorm(xx, mean=fit1$para$mu[,i], sigma=fit1$par
 den=matrix(den,m,m)
 p.clus = fit1$post.clus
 y.pred = fit1$post.pred
+pclus = p.clus
+p.clus[pclus==1]=2
+p.clus[pclus==2]=1
 
 postscript(paste(SPATH, '/Results/fig4.eps', sep=''), width=8, height=10)
 mat <- matrix(c(2, 4, 1, 3), 2, 2,byrow=TRUE)

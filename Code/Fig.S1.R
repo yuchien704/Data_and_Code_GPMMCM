@@ -29,8 +29,13 @@ Current=Y.knn[which(Y.knn$Ocean=="Current"),]
 Current.cor=cor(Current[,-1])
 
 Fig.S1 <- ggpairs(Y.knn, columns = 2:6,
-                   aes(colour=factor(Ocean), shape=factor(Ocean)),
-                   upper = list(continuous = "cor"),
-                   lower = list(continuous =zz),diag = list(continuous =yy),title="", 
-                   axisLabels = "show", legend = c(1, 1))
+                  aes(colour=factor(Ocean), shape=factor(Ocean)),  #加shape參數
+                  upper = list(continuous = wrap("cor", size = 3.2)),
+                  lower = list(continuous =zz),diag = list(continuous =yy),title="", 
+                  axisLabels = "show", legend = c(1, 1)) +
+  theme(text = element_text(size=14, lineheight = 30),
+        plot.margin = unit(c(0,0,0,0), "cm"),
+        strip.text = element_text(size = 15, margin = margin(r = 10, l = 10, b = 10, t = 10))) +
+  # theme_light(10) + 
+  theme(legend.position="none")
 ggsave(paste(SPATH, '/Results/Fig.S1.eps', sep=''), plot = Fig.S1, width=8, height=8)
